@@ -8,8 +8,15 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req,res) => {
-  res.send("hello");
+  res.render("index");
+})
 
+app.get('/projects', (req,res) => {
+  res.render('project')
+})
+
+app.get('/skills', (req,res) => {
+  res.render('skill')
 })
 
 app.listen(8080, () => {
